@@ -2,7 +2,7 @@
   width: 230px;
   height: 89vh;
 
-  background-color: #1f2937; /* dark but not too dark */
+  background-color: #1f2937; 
 
   padding: 20px 15px;
   border-radius: 12px;
@@ -48,7 +48,10 @@
   background-color: #374151;
   color: white;
 }
-
+.sidebarItem7362.active{
+  background-color: #374151;
+  color: white;
+}
 
 .sidebarItem7362.active7362 {
   background-color: #4f46e5;
