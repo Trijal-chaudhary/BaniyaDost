@@ -8,10 +8,15 @@
 
   border-radius: 14px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-
-  margin: 15px;
+  top: 0;
+  /* margin: 15px; */
+  position: fixed;
+  width: 98vw;
 }
 
+*{
+  box-sizing: border-box;
+}
 
 .search-container {
   flex: 1;
