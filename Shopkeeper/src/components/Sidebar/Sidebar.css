@@ -1,0 +1,55 @@
+.sidebar_4821 {
+  width: 340px;
+  background: #111827;
+  color: white;
+  padding: 25px 20px;
+  font-family: "Segoe UI", sans-serif;
+  position: fixed;
+  /* top: 70px; */
+  height: 100vh;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: 0.7s ease-in-out;
+  z-index: 100;
+}
+
+.sidebarLogo_4821 {
+  margin-bottom: 40px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #60a5fa;
+  /* margin-top: 60px; */
+}
+
+.sidebarMenu_4821 {
+  list-style: none;
+  padding: 0;
+}
+
+.menuItem_4821 {
+  padding: 12px 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.CLoseSidebarIcon{
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  height: 25px;
+  width: auto;
+  fill: gray;
+  transition: 0.6s ease-in-out;
+  cursor: pointer;
+}
+.CLoseSidebarIcon:hover{
+  fill: white;
+  transform: rotate(180deg);
+  scale: 1.1;
+}
+
+.menuItem_4821:hover {
+  background: #1f2937;
+}
