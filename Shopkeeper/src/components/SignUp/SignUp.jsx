@@ -10,6 +10,7 @@ const SignUp = () => {
     shopName: "",
     businessType: "",
     city: "",
+    username: "",
   });
 
   const handleChange = (e) => {
@@ -36,6 +37,14 @@ const SignUp = () => {
             name="name"
             placeholder="Full Name"
             value={formData.name}
+            onChange={handleChange}
+            className="signupInput4821"
+          />
+          <input
+            type="text"
+            name="username"
+            placeholder="username"
+            value={formData.username}
             onChange={handleChange}
             className="signupInput4821"
           />

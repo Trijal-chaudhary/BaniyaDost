@@ -6,6 +6,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import "./App.css";
 import Orders from "./components/Orders/Orders";
 import SignUp from "./components/SignUp/SignUp";
+import Login from "./components/Login/Login";
 function App() {
   const [currSection, setCurrSection] = useState("Dashboard");
   return (
@@ -15,12 +16,13 @@ function App() {
 
         <div className="mainContent_4821">
           <Routes>
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/" element={<Dashboard />} />
             <Route path="/wholesalers" element={<WholeShellerCards />} />
             <Route path="/dashboard" element={<Dashboard />} />
 
             <Route path="/orders" element={<Orders />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </div>
       </BrowserRouter>
