@@ -2,7 +2,9 @@ import React from "react";
 import { useState } from "react";
 import "./SignUp.css";
 import { signupApi } from "../../services/fetching";
+import { useNavigate } from "react-router-dom";
 const SignUp = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,10 +22,10 @@ const SignUp = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    signupApi(formData);
-    console.log(formData);
+    await signupApi(formData);
+    navigate("/login");
   };
 
   return (

@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require("cors");
 const mongoose = require("mongoose")
 const session = require("express-session");
-const { postShopSignupRouter } = require('./Router/ShopeRouter');
+const { postShopSignupRouter, postLoginShopRouter } = require('./Router/ShopeRouter');
 const app = express();
 const DB_URL = process.env.DB_URL;
 const MongoDBStore = require("connect-mongodb-session")(session);
@@ -31,6 +31,7 @@ app.use(session({
   }
 }))
 app.use('/api/shop/signup', postShopSignupRouter)
+app.use('/api/shop/login', postLoginShopRouter);
 mongoose.connect(DB_URL).then(() => {
   console.log("mongoose connected");
   app.listen(3000, () => {

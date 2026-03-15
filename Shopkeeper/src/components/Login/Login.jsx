@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-
+import { LoginShop } from "../../services/fetching";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     password: "",
     username: "",
@@ -13,9 +15,14 @@ const Login = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    const response = await LoginShop(formData);
+    if (response.message === "found") {
+      navigate("/");
+    } else {
+      alert("not match");
+    }
   };
 
   return (

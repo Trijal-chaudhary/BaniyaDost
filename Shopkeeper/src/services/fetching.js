@@ -10,3 +10,14 @@ export const signupApi = async (data) => {
   })
   return response.json();
 }
+export const LoginShop = async (data) => {
+  const response = await fetch(`${BacUrl}/api/shop/login`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ data }),
+    credentials: "include"
+  })
+  return response.json();
+} 
