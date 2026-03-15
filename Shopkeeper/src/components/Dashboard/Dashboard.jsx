@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Dashboard.css";
+import { islogged } from "../../services/fetching";
+import { useEffect } from "react";
 const Dashboard = () => {
+  const [details, setDetails] = useState();
+  useEffect(() => {
+    islogged("hello");
+  }, []);
   return (
     <div className="dashboard_9281">
       <h1 className="dashboardTitle_9281">Shopkeeper Dashboard</h1>

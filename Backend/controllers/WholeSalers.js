@@ -1,0 +1,34 @@
+const WholeSalersDetails = require("../models/WholeSalers");
+exports.postWholeSignUp = async (req, res) => {
+  console.log(req.body);
+  const details = await WholeSalersDetails({
+    details: req.body.data
+  })
+  await details.save();
+  res.status(200).json({ Message: "hello" })
+}
+exports.postWholeLoginShop = async (req, res) => {
+  const { password, username } = req.body.data;
+  console.log(password, username);
+  const details = await WholeSalersDetails.findOne({ "details.password": password, "details.username": username })
+  // console.log(details._id)
+  if (details) {
+    req.session.isLogged = true;
+    req.session.userId = details._id.toString();
+    req.session.who = "whole";
+    res.status(200).json({ message: "found" })
+  } else {
+    res.status(200).json({ message: "notFound" })
+  }
+}
+exports.postWholeIsLoggedin = async (req, res) => {
+  console.log(req.body, req.session.isLogged);
+  if (req.session.isLogged && req.session.who === "whole") {
+    const details = await WholeSalersDetails.findById(req.session.userId)
+    console.log(details);
+    res.status(200).json({ message: "yes", details })
+  } else {
+    res.status(200).json({ Message: "no" })
+  }
+
+}

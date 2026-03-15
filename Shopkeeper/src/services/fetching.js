@@ -20,4 +20,15 @@ export const LoginShop = async (data) => {
     credentials: "include"
   })
   return response.json();
+}
+export const islogged = async (data) => {
+  const response = await fetch(`${BacUrl}/api/shop/islogged`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ data }),
+    credentials: "include"
+  })
+  return response.json();
 } 

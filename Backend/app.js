@@ -3,7 +3,8 @@ const express = require('express');
 const cors = require("cors");
 const mongoose = require("mongoose")
 const session = require("express-session");
-const { postShopSignupRouter, postLoginShopRouter } = require('./Router/ShopeRouter');
+const { postShopSignupRouter, postLoginShopRouter, postisLoggedRouter } = require('./Router/ShopeRouter');
+const { postWholeSignUpRouter, postWholeLoginShopRouter, postWholeIsLoggedinRouter } = require('./Router/WholeSalersRouter');
 const app = express();
 const DB_URL = process.env.DB_URL;
 const MongoDBStore = require("connect-mongodb-session")(session);
@@ -11,6 +12,7 @@ const store = new MongoDBStore({
   uri: DB_URL,
   collection: "session",
 })
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
@@ -25,13 +27,17 @@ app.use(session({
   store: store,
   cookie: {
     httpOnly: true,
-    secure: false,          // false because you're using http://
-    sameSite: "none",        // ✅ works well on same-network, avoids "None" issue
+    secure: false,
+    sameSite: "lax",
     maxAge: 1000 * 60 * 60 * 5
   }
 }))
 app.use('/api/shop/signup', postShopSignupRouter)
 app.use('/api/shop/login', postLoginShopRouter);
+app.use('/api/shop/islogged', postisLoggedRouter);
+app.use('/api/whole/signup', postWholeSignUpRouter);
+app.use('/api/whole/login', postWholeLoginShopRouter)
+app.use('/api/whole/isLogged', postWholeIsLoggedinRouter)
 mongoose.connect(DB_URL).then(() => {
   console.log("mongoose connected");
   app.listen(3000, () => {

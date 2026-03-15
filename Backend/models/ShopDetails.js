@@ -11,7 +11,18 @@ const ShopKeeperDetails = mongoose.Schema({
   credits: {
     type: Number,
     default: 100
-  }
+  },
+  totalOrders: {
+    type: Number,
+    default: 0
+  },
+  pendingOrders: {
+    type: Number,
+    default: 0
+  },
+  pendingPayments: {
+    type: Array
+  },
 })
 
 module.exports = mongoose.model("ShopKeeperDetails", ShopKeeperDetails)

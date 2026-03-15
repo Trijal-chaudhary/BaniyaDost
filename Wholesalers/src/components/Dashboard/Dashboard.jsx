@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Dashboard.css";
+import { wholeIsLogged } from "../../services/fetching";
+import { useNavigate } from "react-router-dom";
 const Dashboard = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    wholeIsLogged("hello").then((data) => {
+      // console.log(data);
+      if (data.message === "yes") {
+        console.log(data.details);
+      } else {
+        navigate("/login");
+      }
+    });
+  }, []);
   return (
     <div className="dashboardContainer5482">
       <div className="statsGrid5482">
