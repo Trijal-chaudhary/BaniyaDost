@@ -7,6 +7,7 @@ import Inventory from "./components/Inventory/Inventory";
 import { useState } from "react";
 import SignUp from "./components/SignUp/SignUp";
 import LogIn from "./components/LogIn/LogIn";
+import AddProduct from "./components/Inventory/AddProduct/AddProduct";
 function App() {
   const [currSection, setCurrSection] = useState("Dashboard");
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/inventory" element={<Inventory />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<LogIn />} />
+            <Route path="/AddProduct" element={<AddProduct />} />
           </Routes>
         </div>
       </BrowserRouter>

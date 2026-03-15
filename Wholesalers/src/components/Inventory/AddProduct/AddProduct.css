@@ -1,0 +1,55 @@
+.addProductContainer9032 {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f6fb;
+}
+
+.addProductCard9032 {
+  width: 420px;
+  padding: 35px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.addProductTitle9032 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.addProductForm9032 {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.addProductInput9032 {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.addProductInput9032:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+.addProductButton9032 {
+  margin-top: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4f46e5;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.addProductButton9032:hover {
+  background-color: #4338ca;
+}

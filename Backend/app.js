@@ -4,7 +4,7 @@ const cors = require("cors");
 const mongoose = require("mongoose")
 const session = require("express-session");
 const { postShopSignupRouter, postLoginShopRouter, postisLoggedRouter } = require('./Router/ShopeRouter');
-const { postWholeSignUpRouter, postWholeLoginShopRouter, postWholeIsLoggedinRouter } = require('./Router/WholeSalersRouter');
+const { postWholeSignUpRouter, postWholeLoginShopRouter, postWholeIsLoggedinRouter, postWholeAddProductRouter } = require('./Router/WholeSalersRouter');
 const app = express();
 const DB_URL = process.env.DB_URL;
 const MongoDBStore = require("connect-mongodb-session")(session);
@@ -38,6 +38,7 @@ app.use('/api/shop/islogged', postisLoggedRouter);
 app.use('/api/whole/signup', postWholeSignUpRouter);
 app.use('/api/whole/login', postWholeLoginShopRouter)
 app.use('/api/whole/isLogged', postWholeIsLoggedinRouter)
+app.use('/api/whole/addproduct', postWholeAddProductRouter);
 mongoose.connect(DB_URL).then(() => {
   console.log("mongoose connected");
   app.listen(3000, () => {

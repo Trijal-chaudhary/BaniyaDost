@@ -32,3 +32,10 @@ exports.postWholeIsLoggedin = async (req, res) => {
   }
 
 }
+exports.postWholeAddProduct = async (req, res) => {
+  // console.log(req.body);
+  const details = await WholeSalersDetails.findById(req.session.userId);
+  details.Products.push(req.body.data);
+  await details.save()
+  res.status(200).json({ Message: "no" })
+}
