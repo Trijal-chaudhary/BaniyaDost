@@ -1,0 +1,56 @@
+.signupContainer4821 {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* background: #f5f6fa; */
+}
+
+.signupCard4821 {
+  width: 400px;
+  background: white;
+
+  padding: 30px;
+  border-radius: 12px;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.signupTitle4821 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.signupForm4821 {
+  display: flex;
+  flex-direction: column;
+}
+
+.signupInput4821 {
+  margin-bottom: 12px;
+  padding: 10px;
+
+  border-radius: 6px;
+  border: 1px solid #ddd;
+
+  font-size: 14px;
+}
+
+.uploadSection4821 {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.signupButton4821 {
+  padding: 12px;
+
+  background: #4f46e5;
+  color: white;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+  font-size: 15px;
+}

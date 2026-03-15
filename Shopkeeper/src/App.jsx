@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Dashboard from "./components/Dashboard/Dashboard";
 import "./App.css";
 import Orders from "./components/Orders/Orders";
+import SignUp from "./components/SignUp/SignUp";
 function App() {
   const [currSection, setCurrSection] = useState("Dashboard");
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
 
             <Route path="/orders" element={<Orders />} />
+            <Route path="/signup" element={<SignUp />} />
           </Routes>
         </div>
       </BrowserRouter>
