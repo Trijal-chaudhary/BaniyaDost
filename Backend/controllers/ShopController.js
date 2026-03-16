@@ -45,7 +45,7 @@ exports.postWholeSalersDetails = async (req, res) => {
   res.status(201).json({ details: wholeDetails });
 }
 exports.postWholeDetailsById = async (req, res) => {
-  // const details = 
-  console.log(req.body)
-  res.status(201).json({ message: "hello" });
+  console.log(req.body.data)
+  const details = await WholeSalersDetails.findById(req.body.data)
+  res.status(201).json({ details });
 }

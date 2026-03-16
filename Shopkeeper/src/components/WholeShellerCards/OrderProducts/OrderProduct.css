@@ -2,6 +2,7 @@
   padding: 30px;
   /* background-color: #f5f7fb; */
   min-height: 100vh;
+  position: relative;
 }
 
 .productsPageTitle7312 {
@@ -66,4 +67,51 @@
 
 .addToCartButton7312:hover {
   background-color: #4338ca;
+}
+.addorsub {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #f3f4f6;
+  padding: 6px 10px;
+  border-radius: 8px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.subfromcart {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4f46e5;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.subfromcart:hover {
+  background-color: #4338ca;
+}
+
+.addorsub p {
+  font-size: 15px;
+  font-weight: 600;
+  min-width: 20px;
+  text-align: center;
+}
+.CartSvgProduct{
+  height: 35px;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  cursor: pointer;
+  fill: rgb(90, 90, 90);
+}
+.CartSvgProduct:hover{
+  scale: 1.1;
+  fill: black;
 }

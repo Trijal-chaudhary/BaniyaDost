@@ -42,4 +42,15 @@ export const wholeDetails = async (data) => {
     credentials: "include"
   })
   return response.json();
+}
+export const wholeByIdForProduct = async (data) => {
+  const response = await fetch(`${BacUrl}/api/whole/wholebyid`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ data }),
+    credentials: "include"
+  })
+  return response.json();
 } 

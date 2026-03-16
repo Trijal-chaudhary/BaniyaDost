@@ -3,7 +3,9 @@ import "./WholeShellerCards.css";
 import Sidebar from "../Sidebar/Sidebar";
 import { useEffect } from "react";
 import { wholeDetails } from "../../services/fetching";
+import { useNavigate } from "react-router-dom";
 const WholeShellerCards = () => {
+  const navigate = useNavigate();
   const [wholesalers, setWholeSalers] = useState([]);
   // const wholesalers = [
   //   {
@@ -81,7 +83,12 @@ const WholeShellerCards = () => {
 
               <div className="buttons">
                 <button className="view-btn">View Details</button>
-                <button className="order-btn">Order</button>
+                <button
+                  onClick={() => navigate(`/orderProduct/${w?._id}`)}
+                  className="order-btn"
+                >
+                  Order
+                </button>
               </div>
             </div>
           ))}
