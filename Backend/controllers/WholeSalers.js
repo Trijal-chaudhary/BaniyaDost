@@ -39,3 +39,8 @@ exports.postWholeAddProduct = async (req, res) => {
   await details.save()
   res.status(200).json({ Message: "no" })
 }
+exports.postWholeLogOut = async (req, res) => {
+  console.log(req.body);
+  await req.session.destroy();
+  res.status(200).json({ message: "hello" })
+}

@@ -20,7 +20,6 @@ const AddProduct = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     AddProductapi(productData);
-    console.log(productData);
   };
 
   return (

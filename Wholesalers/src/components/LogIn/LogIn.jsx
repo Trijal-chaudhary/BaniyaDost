@@ -55,7 +55,13 @@ const LogIn = () => {
 
         <p className="loginSignupText5834">
           Don't have an account?
-          <span className="loginSignupLink5834"> Sign Up</span>
+          <span
+            onClick={() => navigate("/signup")}
+            className="loginSignupLink5834"
+          >
+            {" "}
+            Sign Up
+          </span>
         </p>
       </div>
     </div>

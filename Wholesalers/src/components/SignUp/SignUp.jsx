@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./SignUp.css";
 import { signupApi } from "../../services/fetching";
+import { useNavigate } from "react-router-dom";
 const SignUp = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     ownerName: "",
     shopName: "",
@@ -100,6 +102,16 @@ const SignUp = () => {
             Create Account
           </button>
         </form>
+        <p className="loginSignupText5834">
+          Already have an Account?
+          <span
+            onClick={() => navigate("/login")}
+            className="loginSignupLink5834"
+          >
+            {" "}
+            Log In
+          </span>
+        </p>
       </div>
     </div>
   );
