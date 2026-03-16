@@ -105,6 +105,16 @@ const SignUp = () => {
             Create Account
           </button>
         </form>
+        <p>
+          {" "}
+          Have an account?{" "}
+          <span
+            style={{ cursor: "pointer" }}
+            onClick={() => navigate("/login")}
+          >
+            Log In
+          </span>
+        </p>
       </div>
     </div>
   );

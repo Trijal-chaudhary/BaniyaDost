@@ -64,4 +64,14 @@ export const ShopOrderProduct = async ({ productAdded, id }) => {
     credentials: "include"
   })
   return response.json();
+}
+export const postShopLoggedout = async (data) => {
+  const response = await fetch(`${BacUrl}/api/shop/loggedout`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "include"
+  })
+  return response.json();
 } 

@@ -1,0 +1,77 @@
+.userProfileContainer6193 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.userProfileCard6193 {
+  width: 420px;
+  background: white;
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+.userProfileHeader6193 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.userProfileAvatar6193 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #4f46e5;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.userProfileName6193 {
+  font-size: 20px;
+}
+
+.userProfileUsername6193 {
+  color: #777;
+  font-size: 14px;
+}
+
+.userProfileDetails6193 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.userProfileRow6193 {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.userProfileLabel6193 {
+  font-weight: 600;
+  color: #444;
+}
+
+.userProfileLogoutBtn6193 {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #ef4444;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.userProfileLogoutBtn6193:hover {
+  background: #dc2626;
+}

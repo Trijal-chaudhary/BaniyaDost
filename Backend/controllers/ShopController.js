@@ -70,3 +70,20 @@ exports.postProductOrder = async (req, res) => {
   await shopDetails.save()
   res.status(201).json({ message: "hello" });
 }
+
+exports.postShopLoggedout = async (req, res) => {
+  console.log("hello");
+  req.session.destroy((err) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json({ message: "Logout failed" });
+    }
+
+    res.clearCookie("BaniyaDost");
+
+    res.status(200).json({
+      message: "Logged out successfully"
+    });
+  });
+
+}

@@ -1,5 +1,7 @@
 import React from "react";
 import "./Orders.css";
+import { useEffect } from "react";
+import { islogged } from "../../services/fetching";
 const Orders = () => {
   const orders = [
     {
@@ -24,7 +26,11 @@ const Orders = () => {
       date: "10 Mar 2026",
     },
   ];
-
+  useEffect(() => {
+    islogged("hello").then((ele) => {
+      console.log(ele);
+    });
+  }, []);
   return (
     <div className="ordersPage_4821">
       <h1 className="ordersTitle_4821">Orders</h1>

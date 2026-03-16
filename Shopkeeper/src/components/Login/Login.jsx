@@ -47,10 +47,19 @@ const Login = () => {
             onChange={handleChange}
             className="signupInput4821"
           />
-
           <button type="submit" className="signupButton4821">
             Log In
           </button>
+          <p>
+            {" "}
+            Don't have an account{" "}
+            <span
+              style={{ cursor: "pointer" }}
+              onClick={() => navigate("/signup")}
+            >
+              Sign Up
+            </span>
+          </p>
         </form>
       </div>
     </div>

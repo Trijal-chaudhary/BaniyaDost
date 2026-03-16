@@ -51,8 +51,11 @@ const Navbar = ({ setCurrSection, currSection }) => {
       <div className="nav-right">
         <div className="notification">🔔</div>
 
-        <div className="profile">
-          <img src="https://i.pravatar.cc/40" alt="profile" />
+        <div onClick={() => navigate("/userdetails")} className="profile">
+          <img
+            src="https://www.svgrepo.com/show/355688/user-a-solid.svg"
+            alt="profile"
+          />
         </div>
       </div>
     </nav>
