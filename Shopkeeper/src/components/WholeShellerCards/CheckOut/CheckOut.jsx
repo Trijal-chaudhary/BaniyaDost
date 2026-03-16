@@ -1,6 +1,12 @@
 import React from "react";
 import "./CheckOut.css";
-const CheckOut = ({ total, productAdded, setRenderCheckOut }) => {
+import { ShopOrderProduct } from "../../../services/fetching";
+import { useNavigate } from "react-router-dom";
+const CheckOut = ({ id, total, productAdded, setRenderCheckOut }) => {
+  const navigate = useNavigate();
+  const handleOrder = () => {
+    ShopOrderProduct({ productAdded, id }).then(() => navigate("/"));
+  };
   return (
     <div className="checkoutOverlay5271">
       <div className="checkoutModal5271">
@@ -38,7 +44,12 @@ const CheckOut = ({ total, productAdded, setRenderCheckOut }) => {
             <span>{total}</span>
           </div>
 
-          <button className="checkoutOrderBtn5271">Place Order</button>
+          <button
+            onClick={() => handleOrder()}
+            className="checkoutOrderBtn5271"
+          >
+            Place Order
+          </button>
         </div>
       </div>
     </div>

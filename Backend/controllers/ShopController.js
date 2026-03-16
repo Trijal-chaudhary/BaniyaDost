@@ -49,3 +49,24 @@ exports.postWholeDetailsById = async (req, res) => {
   const details = await WholeSalersDetails.findById(req.body.data)
   res.status(201).json({ details });
 }
+exports.postProductOrder = async (req, res) => {
+  const { productAdded, id } = req.body;
+  const wholeDetails = await WholeSalersDetails.findById(id);
+  const shopDetails = await ShopKeeperDetails.findById(req.session.userId);
+  // console.log(wholeDetails)
+  const Wholeobj = {
+    userId: req.session.userId,
+    status: "pending",
+    details: productAdded
+  }
+  const userObj = {
+    userId: id,
+    status: "pending",
+    details: productAdded
+  }
+  wholeDetails.orderDetails.push(Wholeobj);
+  shopDetails.orderDetails.push(userObj);
+  await wholeDetails.save();
+  await shopDetails.save()
+  res.status(201).json({ message: "hello" });
+}

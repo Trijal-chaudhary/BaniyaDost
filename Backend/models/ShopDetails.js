@@ -23,6 +23,9 @@ const ShopKeeperDetails = mongoose.Schema({
   pendingPayments: {
     type: Array
   },
+  orderDetails: {
+    type: Array
+  }
 })
 
 module.exports = mongoose.model("ShopKeeperDetails", ShopKeeperDetails)

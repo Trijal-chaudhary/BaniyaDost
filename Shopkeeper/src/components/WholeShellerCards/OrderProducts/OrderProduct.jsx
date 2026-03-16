@@ -71,6 +71,7 @@ const OrderProduct = () => {
     <div className="productsPageContainer7312">
       {renderCheckOut && (
         <CheckOut
+          id={id}
           total={total}
           productAdded={productAdded}
           setRenderCheckOut={setRenderCheckOut}

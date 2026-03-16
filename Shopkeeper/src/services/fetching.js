@@ -53,4 +53,15 @@ export const wholeByIdForProduct = async (data) => {
     credentials: "include"
   })
   return response.json();
+}
+export const ShopOrderProduct = async ({ productAdded, id }) => {
+  const response = await fetch(`${BacUrl}/api/shop/orderproduct`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ productAdded, id }),
+    credentials: "include"
+  })
+  return response.json();
 } 
