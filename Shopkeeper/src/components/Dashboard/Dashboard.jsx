@@ -2,10 +2,20 @@ import React, { useState } from "react";
 import "./Dashboard.css";
 import { islogged } from "../../services/fetching";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 const Dashboard = () => {
+  const navigate = useNavigate();
   const [details, setDetails] = useState();
   useEffect(() => {
-    islogged("hello");
+    islogged("hello").then((ele) => {
+      // console.log(ele);
+      if (ele.message === "no") {
+        navigate("/login");
+      } else {
+        // console.log(ele.details);
+        setDetails(ele.details);
+      }
+    });
   }, []);
   return (
     <div className="dashboard_9281">

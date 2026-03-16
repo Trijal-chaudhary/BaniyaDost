@@ -31,4 +31,15 @@ export const islogged = async (data) => {
     credentials: "include"
   })
   return response.json();
+}
+export const wholeDetails = async (data) => {
+  const response = await fetch(`${BacUrl}/api/shop/wholedetails`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ data }),
+    credentials: "include"
+  })
+  return response.json();
 } 

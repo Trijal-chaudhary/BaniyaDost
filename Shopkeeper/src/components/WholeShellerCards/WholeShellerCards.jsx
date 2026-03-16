@@ -1,49 +1,58 @@
 import React, { useState } from "react";
 import "./WholeShellerCards.css";
 import Sidebar from "../Sidebar/Sidebar";
+import { useEffect } from "react";
+import { wholeDetails } from "../../services/fetching";
 const WholeShellerCards = () => {
-  const wholesalers = [
-    {
-      id: 1,
-      name: "Sharma Foods",
-      rating: 4.5,
-      supplies: "Rice, Wheat, Oil",
-      credit: "7 Days",
-      delivery: "Same Day",
-      distance: "2.1 km",
-      minOrder: "₹1000",
-    },
-    {
-      id: 2,
-      name: "Gupta Traders",
-      rating: 4.8,
-      supplies: "Sugar, Tea, Spices",
-      credit: "10 Days",
-      delivery: "24 Hours",
-      distance: "3.4 km",
-      minOrder: "₹800",
-    },
-    {
-      id: 3,
-      name: "Mahesh Wholesale",
-      rating: 4.2,
-      supplies: "Biscuits, Snacks, Cold Drinks",
-      credit: "5 Days",
-      delivery: "Same Day",
-      distance: "1.8 km",
-      minOrder: "₹1500",
-    },
-    {
-      id: 3,
-      name: "Mahesh Wholesale",
-      rating: 4.2,
-      supplies: "Biscuits, Snacks, Cold Drinks",
-      credit: "5 Days",
-      delivery: "Same Day",
-      distance: "1.8 km",
-      minOrder: "₹1500",
-    },
-  ];
+  const [wholesalers, setWholeSalers] = useState([]);
+  // const wholesalers = [
+  //   {
+  //     id: 1,
+  //     name: "Sharma Foods",
+  //     rating: 4.5,
+  //     supplies: "Rice, Wheat, Oil",
+  //     credit: "7 Days",
+  //     delivery: "Same Day",
+  //     distance: "2.1 km",
+  //     minOrder: "₹1000",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Gupta Traders",
+  //     rating: 4.8,
+  //     supplies: "Sugar, Tea, Spices",
+  //     credit: "10 Days",
+  //     delivery: "24 Hours",
+  //     distance: "3.4 km",
+  //     minOrder: "₹800",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Mahesh Wholesale",
+  //     rating: 4.2,
+  //     supplies: "Biscuits, Snacks, Cold Drinks",
+  //     credit: "5 Days",
+  //     delivery: "Same Day",
+  //     distance: "1.8 km",
+  //     minOrder: "₹1500",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Mahesh Wholesale",
+  //     rating: 4.2,
+  //     supplies: "Biscuits, Snacks, Cold Drinks",
+  //     credit: "5 Days",
+  //     delivery: "Same Day",
+  //     distance: "1.8 km",
+  //     minOrder: "₹1500",
+  //   },
+  // ];
+  useEffect(() => {
+    wholeDetails("hello").then((ele) => {
+      console.log(ele.details);
+      setWholeSalers(ele.details);
+    });
+  }, []);
   return (
     <>
       <div className="page">
@@ -52,22 +61,22 @@ const WholeShellerCards = () => {
         <div className="card-container">
           {wholesalers.map((w) => (
             <div key={w.id} className="card">
-              <h2>{w.name}</h2>
+              <h2>{w?.details?.shopName}</h2>
               <p>⭐ {w.rating} Rating</p>
               <p>
-                <b>Supplies:</b> {w.supplies}
+                <b>Owner Name:</b> {w?.details?.ownerName}
               </p>
               <p>
-                <b>Credit:</b> {w.credit}
+                <b>Category:</b> {w?.details?.category}
               </p>
-              <p>
+              {/* <p>
                 <b>Delivery:</b> {w.delivery}
-              </p>
-              <p>
+              </p> */}
+              {/* <p>
                 <b>Distance:</b> {w.distance}
-              </p>
+              </p> */}
               <p>
-                <b>Min Order:</b> {w.minOrder}
+                <b>City</b> {w?.details?.city}
               </p>
 
               <div className="buttons">
