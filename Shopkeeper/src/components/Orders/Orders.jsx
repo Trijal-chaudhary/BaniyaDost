@@ -1,34 +1,65 @@
 import React from "react";
 import "./Orders.css";
 import { useEffect } from "react";
-import { islogged } from "../../services/fetching";
+import { islogged, wholeByIdForProduct } from "../../services/fetching";
+import { useState } from "react";
 const Orders = () => {
-  const orders = [
-    {
-      id: 1,
-      wholesaler: "Sharma Foods",
-      amount: "₹2500",
-      status: "Delivered",
-      date: "12 Mar 2026",
-    },
-    {
-      id: 2,
-      wholesaler: "Gupta Traders",
-      amount: "₹1800",
-      status: "Processing",
-      date: "11 Mar 2026",
-    },
-    {
-      id: 3,
-      wholesaler: "Mahesh Wholesale",
-      amount: "₹3200",
-      status: "Shipped",
-      date: "10 Mar 2026",
-    },
-  ];
+  const [orders, setOrders] = useState([]);
+  // const orders = [
+  //   {
+  //     id: 1,
+  //     wholesaler: "Sharma Foods",
+  //     amount: "₹2500",
+  //     status: "Delivered",
+  //     date: "12 Mar 2026",
+  //   },
+  //   {
+  //     id: 2,
+  //     wholesaler: "Gupta Traders",
+  //     amount: "₹1800",
+  //     status: "Processing",
+  //     date: "11 Mar 2026",
+  //   },
+  //   {
+  //     id: 3,
+  //     wholesaler: "Mahesh Wholesale",
+  //     amount: "₹3200",
+  //     status: "Shipped",
+  //     date: "10 Mar 2026",
+  //   },
+  // ];
   useEffect(() => {
     islogged("hello").then((ele) => {
-      console.log(ele);
+      const tempOrders = [];
+
+      ele.details.orderDetails.forEach((ele, idx) => {
+        let amount = 0;
+
+        ele.details.forEach((item) => {
+          amount += item.Qty * parseInt(item.price.replace("₹", ""));
+        });
+
+        wholeByIdForProduct(ele.userId).then((res) => {
+          const name = res.details.details.shopName;
+
+          const today = new Date();
+          const formattedDate = today.toLocaleDateString("en-GB", {
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+          });
+
+          tempOrders.push({
+            id: idx,
+            wholesaler: name,
+            amount,
+            status: "Processing",
+            date: formattedDate,
+          });
+
+          setOrders([...tempOrders]);
+        });
+      });
     });
   }, []);
   return (
@@ -44,7 +75,7 @@ const Orders = () => {
           <span>Action</span>
         </div>
 
-        {orders.map((order) => (
+        {orders?.map((order) => (
           <div className="ordersRow_4821" key={order.id}>
             <span>{order.wholesaler}</span>
             <span>{order.amount}</span>
