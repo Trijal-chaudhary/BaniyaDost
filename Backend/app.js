@@ -16,7 +16,7 @@ app.set("trust proxy", 1);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin: ["http://localhost:5173", "http://localhost:5174", "https://baniyadost-shop.vercel.app", "https://baniyadost.onrender.com"],
+  origin: ["http://localhost:5173", "http://localhost:5174", "https://baniyadost-shop.vercel.app", "https://baniyadost.onrender.com", "baniya-dost-ws.vercel.app"],
   credentials: true
 }))
 const isProd = process.env.NODE_ENV === "production";
