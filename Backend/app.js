@@ -19,6 +19,7 @@ app.use(cors({
   origin: ["http://localhost:5173", "http://localhost:5174", "https://baniyadost-shop.vercel.app"],
   credentials: true
 }))
+const isProd = process.env.NODE_ENV === "production";
 app.use(session({
   name: "BaniyaDost",
   secret: "the_is_baniyadost",
@@ -27,8 +28,8 @@ app.use(session({
   store: store,
   cookie: {
     httpOnly: true,
-    secure: true,
-    sameSite: "none",
+    secure: isProd,              // ✅ only true in production
+    sameSite: isProd ? "none" : "lax", // ✅ fix
     maxAge: 1000 * 60 * 60 * 5
   }
 }))
