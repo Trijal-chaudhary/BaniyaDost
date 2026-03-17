@@ -16,7 +16,7 @@ const store = new MongoDBStore({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin: ["http://localhost:5173", "http://localhost:5174", "https://baniyadost-shop.vercel.app"],
+  origin: ["http://localhost:5173", "http://localhost:5174", "https://baniyadost-shop.vercel.app", "https://baniyadost.onrender.com"],
   credentials: true
 }))
 const isProd = process.env.NODE_ENV === "production";
