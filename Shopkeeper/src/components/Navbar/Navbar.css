@@ -8,13 +8,65 @@
   border-bottom: 1px solid #e5e7eb;
   font-family: "Segoe UI", sans-serif;
   position: fixed;
-  width: 100vw;
+  width: 100%;
   z-index: 100;
   top: 0;
 }
 *{
   box-sizing: border-box;
   margin: 0%;
+}
+.imgLogoCont{
+  height: 50px;
+  margin-left: 50px;
+}
+.imgLogoCont img{
+  height: 100%;
+}
+.aiBtnContainer {
+  display: flex;
+  justify-content: center;
+  /* margin: 20px 0; */
+}
+
+/* Button */
+.aiBtn {
+  padding: 12px 22px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  color: white;
+
+  /* Gradient AI look */
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+
+  /* Shadow */
+  box-shadow: 0 6px 18px rgba(101, 71, 255, 0.4);
+
+  transition: all 0.25s ease;
+}
+
+/* Hover effect */
+.aiBtn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(101, 71, 255, 0.6);
+}
+
+/* Click effect */
+.aiBtn:active {
+  transform: scale(0.97);
+}
+
+/* Optional glow animation */
+.aiBtn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 .logo {
   font-size: 1.4rem;
