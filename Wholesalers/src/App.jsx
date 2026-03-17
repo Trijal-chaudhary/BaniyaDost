@@ -9,6 +9,7 @@ import SignUp from "./components/SignUp/SignUp";
 import LogIn from "./components/LogIn/LogIn";
 import AddProduct from "./components/Inventory/AddProduct/AddProduct";
 import DetailsPage from "./components/DetailsPage/DetailsPage";
+import Orders from "./components/Orders/Orders";
 
 function Layout({ children }) {
   const location = useLocation();
@@ -39,10 +40,10 @@ function App() {
           <Route path="/inventory" element={<Inventory />} />
           <Route path="/AddProduct" element={<AddProduct />} />
 
-          {/* Auth pages */}
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/UserDetails" element={<DetailsPage />} />
+          <Route path="/orders" element={<Orders />} />
         </Routes>
       </Layout>
     </BrowserRouter>

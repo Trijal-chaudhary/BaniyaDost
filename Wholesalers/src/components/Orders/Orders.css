@@ -1,0 +1,142 @@
+/* Page */
+.ordersPage_4821 {
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Title */
+.ordersTitle_4821 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* Card */
+.orderCard_4821 {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  transition: 0.2s ease;
+}
+
+.orderCard_4821:hover {
+  transform: translateY(-3px);
+}
+
+/* Header */
+.orderHeader_4821 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.orderHeader_4821 span:first-child {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Status */
+.status_4821 {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.status_4821.processing {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status_4821.delivered {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status_4821.shipped {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+/* Products List */
+.productsList_4821 {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+/* Product Row */
+.productRow_4821 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Product Image */
+.productRow_4821 img {
+  width: 55px;
+  height: 55px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Product Info */
+.productRow_4821 div {
+  flex: 1;
+}
+
+.productRow_4821 p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.productRow_4821 p:first-child {
+  font-weight: 500;
+}
+
+/* Price */
+.productRow_4821 span {
+  font-weight: 500;
+}
+
+/* Footer */
+.orderFooter_4821 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Total */
+.orderFooter_4821 span:first-child {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Date */
+.orderFooter_4821 span:nth-child(2) {
+  color: #777;
+  font-size: 13px;
+}
+
+/* Button */
+.viewBtn_4821 {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #111;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.viewBtn_4821:hover {
+  background: #333;
+}

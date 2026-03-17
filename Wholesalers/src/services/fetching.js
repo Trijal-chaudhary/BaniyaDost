@@ -54,3 +54,14 @@ export const logout = async (data) => {
   })
   return response.json();
 }
+export const shopById = async (data) => {
+  const response = await fetch(`${BacUrl}/api/whole/getshopbyid`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ data }),
+    credentials: "include"
+  })
+  return response.json();
+}
