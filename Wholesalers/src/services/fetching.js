@@ -1,4 +1,4 @@
-const BacUrl = "http://localhost:3000"
+const BacUrl = "https://baniyadostbackend.onrender.com"
 export const signupApi = async (data) => {
   const response = await fetch(`${BacUrl}/api/whole/signup`, {
     method: "POST",
